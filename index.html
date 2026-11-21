@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Venwey</title>
 <style>
+  :root {
+    /* Height of Figma's bottom bar ("venwey portfolio / Edited ..."). Raise this
+       if a sliver of the bar still shows, lower it if the design looks cut off. */
+    --crop-bottom: 64px;
+  }
   html, body {
     margin: 0;
     padding: 0;
@@ -13,22 +18,29 @@
     overflow: hidden;
     background: #FFF7E4;
   }
-  .frame {
+  .stage {
     position: fixed;
     inset: 0;
-    width: 100vw;
-    height: 100vh;
-    height: 100dvh;
+    overflow: hidden;
+  }
+  .frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + var(--crop-bottom));
     border: 0;
     display: block;
   }
 </style>
 </head>
 <body>
-<iframe class="frame"
-  title="Venwey"
-  src="https://embed.figma.com/proto/JM58XJYVhf18uDaQb3yk8A/Untitled?node-id=1-37&amp;viewport=423%2C60%2C0.07&amp;localFileKey=LOCAL_619c7a32-af46-41d2-b574-6735f2d1c761&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;embed-host=share"
-  allow="fullscreen"
-  allowfullscreen></iframe>
+<div class="stage">
+  <iframe class="frame"
+    title="Venwey"
+    src="https://embed.figma.com/proto/JM58XJYVhf18uDaQb3yk8A/Untitled?node-id=1-37&amp;viewport=423%2C60%2C0.07&amp;localFileKey=LOCAL_619c7a32-af46-41d2-b574-6735f2d1c761&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;embed-host=share"
+    allow="fullscreen"
+    allowfullscreen></iframe>
+</div>
 </body>
 </html>
